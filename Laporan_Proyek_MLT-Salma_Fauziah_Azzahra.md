@@ -247,15 +247,15 @@ Kita dapat menggunakan confusion matrix untuk menghitung berbagai _performance m
 
 - Accuracy menggambarkan seberapa akurat model dapat mengklasifikasikan dengan benar.
 
-
+$$ accuracy = {TP + TN   \over  TP + TN + FP + FN}  $$
 
 - Precision menggambarkan tingkat keakuratan antara data yang diminta dengan hasil prediksi yang diberikan oleh model.
 
-
+$$ precision = {TP \over  TP + FP}  $$
 
 - Recall menggambarkan keberhasilan model dalam menemukan kembali sebuah informasi.
  
-
+$$ precision = {TP \over  TP + FN}  $$
 
 Berikut hasil evaluasi dari proyek ini :
 
