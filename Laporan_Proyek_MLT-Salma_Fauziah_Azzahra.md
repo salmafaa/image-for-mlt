@@ -23,7 +23,7 @@ Oleh karena itu deteksi dini dirasa sangat penting untuk mencengah dan meminimal
 #### Solution statements
 - Menyiapkan data agar bisa digunakan untuk membangun model
 -  Menganalisis data dengan melakukan univariate analysis dan multivariate analysis. Memahami data dengan disertai dengan visualisasi yang dapat membantu untuk mengetahui kolerasi antar fitur dan mendeteksi outlier.
--  Melakukan hyperparameter tuning menggunakan grid search dan menentukan solusi permasalahan dengan klasifikasi. ALgoritma yang dipakai dalam proyek ini adalah Random Forest
+-  Melakukan hyperparameter tuning menggunakan grid search dan menentukan solusi permasalahan dengan klasifikasi. Algoritma yang dipakai dalam proyek ini adalah Random Forest
 
 ## Data Understanding
 Data yang digunakan dalam proyek ini merupakan dataset untuk memprediksi kemungkinan seseorang terkena stroke berdasarkan parameter input seperti jenis kelamin, usia, berbagai penyakit, dan status merokok. Dataset dapat diunduh pada [Kaggle: Stroke Prediction Dataset](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset)
@@ -315,6 +315,6 @@ Dari hasil evaluasi dapat dilihat bahwa model algoritma Random Forest dengan kas
 
 ## REFERENCES
 
-[1] P2PTM Kemenkes RI. (2017, Oktober 25). Germas Cegah Stroke. Diakses dari http://p2ptm.kemkes.go.id/tag/germas-cegah-stroke
+[1] Kemenkes RI, P2PTM. (2017, Oktober 25). Germas Cegah Stroke. Diakses dari http://p2ptm.kemkes.go.id/tag/germas-cegah-stroke
 
 [2] FEDESORIANO. 2021. "Stroke Prediction Dataset". Diakses dari https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset
