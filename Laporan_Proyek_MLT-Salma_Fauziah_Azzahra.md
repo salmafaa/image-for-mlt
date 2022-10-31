@@ -1,15 +1,11 @@
 # Laporan Proyek Machine Learning - Salma Fauziah Azzahra
 ## Domain Proyek
 
-Stroke adalah gejala-gejala defisit fungsi saraf yang diakibatkan oleh penyakit pembuluh darah otak, bukan oleh sebab yang lain (WHO). Gangguan fungsi syaraf pada stroke disebabkan oleh gangguan peredaran darah otak non traumatik. 
+Stroke adalah gejala-gejala defisit fungsi saraf yang diakibatkan oleh penyakit pembuluh darah otak, bukan oleh sebab yang lain (WHO). Gangguan fungsi syaraf pada stroke disebabkan oleh gangguan peredaran darah otak non traumatik[1]. 
 
-Menurut Organisasi Kesehatan Dunia (WHO) stroke adalah penyebab kematian ke-2 secara global, bertanggung jawab atas sekitar 11% dari total kematian. Data World Health Organization (WHO) tahun 2012 menunjukkan sekitar 31% dari 56,5 juta orang atau 17,7 juta orang di seluruh dunia meninggal akibat penyakit jantung dan pembuluh darah. Dari seluruh kematian akibat penyakit kardiovaskuler, sebesar 7,4 juta disebabkan oleh Penyakit Jantung Koroner, dan 6,7 juta disebabkan oleh stroke.
+Menurut Organisasi Kesehatan Dunia (WHO) stroke adalah penyebab kematian ke-2 secara global, bertanggung jawab atas sekitar 11% dari total kematian[2]. Data World Health Organization (WHO) tahun 2012 menunjukkan sekitar 31% dari 56,5 juta orang atau 17,7 juta orang di seluruh dunia meninggal akibat penyakit jantung dan pembuluh darah. Dari seluruh kematian akibat penyakit kardiovaskuler, sebesar 7,4 juta disebabkan oleh Penyakit Jantung Koroner, dan 6,7 juta disebabkan oleh stroke[1].
 
-Oleh karena itu deteksi dini dirasa sangat penting untuk mencengah dan meminimalisir terjadinya stroke. Untuk membantu dalam mempermudah deteksi dini, maka dibuatlah proyek machine learning predictive analytics untuk tedeksi awal penyakit stroke berdasarkan faktor-faktor yang ada. Selain mempermudah, proyek ini juga mempercepat proses deteksi.
-
-**Referensi:** 
-- [Kementerian Kesehatan Republik Indonesia: Germas Cegah Stroke](http://p2ptm.kemkes.go.id/tag/germas-cegah-stroke)
-- [Kaggle: Stroke Prediction Dataset](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset)
+Oleh karena itu deteksi dini dirasa sangat penting untuk mencengah dan meminimalisir terjadinya stroke. Untuk membantu dalam mempermudah deteksi dini, maka dibuatlah proyek _machine learning predictive analytics_ untuk tedeksi awal penyakit stroke berdasarkan faktor-faktor yang ada. Selain mempermudah, proyek ini juga mempercepat proses deteksi.
 
 ## Business Understanding
 #### Problem Statements
@@ -59,86 +55,113 @@ Univariate Analysis adalah menganalisis setiap fitur secara terpisah. Fitur pada
 numerical_features = ['age', 'hypertension', 'heart_disease', 'avg_glucose_level', 'bmi', 'stroke']
 categorical_features = ['gender', 'ever_married', 'work_type', 'Residence_type', 'smoking_status']
 ```
-**Fitur gender**
 
-Pada fitur genre terdapat 2994 data "Female" (persentase 58.6%) dan 2115 data "Male" (persentase 41.4%)
+Membuat grafik bar pada setiap fitur:
 
-![gender](https://github.com/salmafaa/image-for-mlt/blob/main/gender.png)
+![gender](https://user-images.githubusercontent.com/109077279/198947253-f6639ba0-1f84-4957-bf96-752cc6497024.png)
 
-**Fitur ever_married**
+Gambar 1. **Fitur gender**
 
-Pada fitur ever_married terdapat 3353 data "Yes" (persentase 65.6%) dan 1757 data "No" (persentase 34.4%)
+Pada Gambar 1, terlihat bahwa pada fitur genre terdapat 2994 data "Female" (persentase 58.6%) dan 2115 data "Male" (persentase 41.4%)
 
-![ever_married](https://github.com/salmafaa/image-for-mlt/blob/main/ever_married.png)
 
-**Fitur work_type**
 
-Pada fitur work_type terdapat 2925 data "Private" (persentase 57.2%), 819 data "Self-employed" (persentase 16.0%), 687 data "children" (persentase 13.4%), 657 data "Govt_job" (persentase 12.9%), dan 22 data "Never_worked" (persentase 0.4%)
+![ever_married](https://user-images.githubusercontent.com/109077279/198947433-ec23dd0d-0088-4828-ab10-4e525b156b76.png)
 
-![work_type](https://github.com/salmafaa/image-for-mlt/blob/main/work_type.png)
+Gambar 2. **Fitur ever_married**
 
-**Fitur Residence_type**
+Pada Gambar 2, terlihat bahwa pada fitur ever_married terdapat 3353 data "Yes" (persentase 65.6%) dan 1757 data "No" (persentase 34.4%)
 
-Pada fitur Residence_type terdapat 2596 data "Urban" (persentase 50.8%) dan 2514 data "Rural" (persentase 49.2%)
 
-![Residence_type](https://github.com/salmafaa/image-for-mlt/blob/main/Residence_type.png)
 
-**Fitur smoking_status**
+![work_type](https://user-images.githubusercontent.com/109077279/198947631-092c230e-6f1f-4e10-8fb9-d7a2222e3b4b.png)
 
-Pada fitur smoking status terdapat 1892 data "never smoked" (persentase 37%), 1544 data "Unknow" (persentase 30.2%), 855 data "formerly smoked" (persentase 17.3%), dan 789 data "smokes" (persentase 15.4%)
+Gambar 3. **Fitur work_type**
 
-![smoking_status](https://github.com/salmafaa/image-for-mlt/blob/main/smoking_status.png)
+Pada Gambar 3, terlihat bahwa pada fitur work_type terdapat 2925 data "Private" (persentase 57.2%), 819 data "Self-employed" (persentase 16.0%), 687 data "children" (persentase 13.4%), 657 data "Govt_job" (persentase 12.9%), dan 22 data "Never_worked" (persentase 0.4%)
 
-**Analisis sebaran pada setiap fitur numerik**
 
-![numerical features](https://github.com/salmafaa/image-for-mlt/blob/main/univariate%20analisis%20(numerical%20features).png)
 
-Berfokus pada data target, yaitu stroke memiliki 4861 untuk 0 (tidak stroke) dan 249 data untuk 1 (stroke). Dapat dilihat bahwa data pada stroke merupakan data yang tidak seimbang sehingga akan mempengaruhi akurasi saat mendeteksi. Permasalahan ini akan diselesaikan pada tahap data preparation.
+![Residence_type](https://user-images.githubusercontent.com/109077279/198947691-870f8823-9479-41b7-8681-4556dbc49c03.png)
+
+Gambar 4. **Fitur Residence_type**
+
+Pada Gambar 4, terlihat bahwa pada fitur Residence_type terdapat 2596 data "Urban" (persentase 50.8%) dan 2514 data "Rural" (persentase 49.2%)
+
+
+
+![smoking_status](https://user-images.githubusercontent.com/109077279/198947756-6a1dc43b-d359-462b-9335-d73a56746597.png)
+
+Gambar 5. **Fitur smoking_status**
+
+Pada Gambar 5, terlihat bahwa pada fitur smoking status terdapat 1892 data "never smoked" (persentase 37%), 1544 data "Unknow" (persentase 30.2%), 855 data "formerly smoked" (persentase 17.3%), dan 789 data "smokes" (persentase 15.4%)
+
+
+
+![univariate analisis (numerical features)](https://user-images.githubusercontent.com/109077279/198948005-a27fddea-57e7-4dae-b2b1-cd3943e013f2.png)
+
+Gambar 6. **Analisis sebaran pada setiap fitur numerik**
+
+Pada Gambar 6, berfokus pada data target, yaitu stroke memiliki 4861 untuk 0 (tidak stroke) dan 249 data untuk 1 (stroke). Dapat dilihat bahwa data pada stroke merupakan data yang tidak seimbang sehingga akan mempengaruhi akurasi saat mendeteksi. Permasalahan ini akan diselesaikan pada tahap data preparation.
+
 
 ## Multivariate Analyst
 Multivariate Analysis menunjukkan hubungan antara dua atau lebih fitur dalam data.
 
-**Korelasi fitur gender dan stroke**
 
-Terlihat bahwa jumlah pria dan wanita yang terkena stroke hampir sama
+![gender x stroke](https://user-images.githubusercontent.com/109077279/198948066-9651d76b-0466-4620-a1ee-3eba76a8b0b7.png)
 
-![genderxstroke](https://github.com/salmafaa/image-for-mlt/blob/main/gender%20x%20stroke.png)
+Gambar 7. **Korelasi fitur gender dan stroke**
 
-**Korelasi fitur ever_married dan stroke**
+Pada Gambar 7, terlihat bahwa jumlah pria dan wanita yang terkena stroke hampir sama.
 
-Terlihat bahwa belum menikah mengurangi risiko stroke karena data setelah menikah memiliki jumlah penderita stroke lebih banyak
 
-![ever_marriedxstroke](https://github.com/salmafaa/image-for-mlt/blob/main/ever_married%20x%20stroke.png)
+![ever_married x stroke](https://user-images.githubusercontent.com/109077279/198948130-0260e7f1-a6e2-49dd-b7c7-0aa97e705ef2.png)
 
-**Korelasi fitur work_type dan stroke**
+Gambar 8. **Korelasi fitur ever_married dan stroke**
 
-Terlihat bahwa pekerja pribadi lebih banyak terkena stroke
+Pada Gambar 8, terlihat bahwa belum menikah mengurangi risiko stroke karena data setelah menikah memiliki jumlah penderita stroke lebih banyak.
 
-![work_typexstroke](https://github.com/salmafaa/image-for-mlt/blob/main/work_type%20x%20stroke.png)
 
-**Korelasi fitur Residence_type dan stroke**
 
-Terlihat bahwa Residence_type hampir memiliki jumlah data yang sama
+![work_type x stroke](https://user-images.githubusercontent.com/109077279/198948202-24ce2368-a762-4cdd-99d9-70e03fdbb053.png)
 
-![Residence_typexstroke](https://github.com/salmafaa/image-for-mlt/blob/main/Residence_type%20x%20stroke.png)
+Gambar 9. **Korelasi fitur work_type dan stroke**
 
-**Korelasi fitur smoking_status dan stroke**
+Pada Gambar 9, terlihat bahwa pekerja pribadi lebih banyak terkena stroke.
 
-Terlihat bahwa sampel tidak pernah merokok yang paling banyak mengalami stroke. Dan proporsi terkecil dari sampel penderita stroke adalah perokok tetapi orang yang sebelumnya merokok dan yang merokok (gabungan) menunjukkan tanda-tanda stroke jauh lebih banyak daripada orang yang tidak pernah merokok.
 
-![smoking_statusxstroke](https://github.com/salmafaa/image-for-mlt/blob/main/smoking_status%20x%20stroke.png)
 
-**Korelasi antara semua fitur numerik**
+![Residence_type x stroke](https://user-images.githubusercontent.com/109077279/198948264-2727079a-10b7-4b27-88f3-e072f9320e63.png)
 
-![korelasi fitur numerik](https://github.com/salmafaa/image-for-mlt/blob/main/Correlation%20matrix%20fitur%20numerical.png)
+Gambar 10. **Korelasi fitur Residence_type dan stroke**
 
-Berfokus pada korelasi stroke dengan fitur numerik lainnya, dapat dilihat bahwa yang memiliki korelasi dengan nilai besar adalah age.
+Pada Gambar 10, terlihat bahwa Residence_type hampir memiliki jumlah data yang sama.
 
-**Korelasi antara fitur age, bmi, dan stroke**
 
-![korelasi agexbmixstroke](https://github.com/salmafaa/image-for-mlt/blob/main/korelasi%20antara%20age%20x%20bmi%20x%20stroke.png)
 
-Terlihat bahwa pasien dengan stroke berada pada rentang usia > 40 tahun dan rentang bmi di bawah 60.
+![smoking_status x stroke](https://user-images.githubusercontent.com/109077279/198948317-fc1390d8-7169-45bf-9e9a-0126b1830b84.png)
+
+Gambar 11. **Korelasi fitur smoking_status dan stroke**
+
+Pada Gambar 11, terlihat bahwa sampel tidak pernah merokok yang paling banyak mengalami stroke. Dan proporsi terkecil dari sampel penderita stroke adalah perokok tetapi orang yang sebelumnya merokok dan yang merokok (gabungan) menunjukkan tanda-tanda stroke jauh lebih banyak daripada orang yang tidak pernah merokok.
+
+
+
+![Correlation matrix fitur numerical](https://user-images.githubusercontent.com/109077279/198948399-323c304b-4996-43ec-9874-04aa465ae0c2.png)
+
+Gambar 12. **Korelasi antara semua fitur numerik**
+
+Pada Gambar 12, berfokus pada korelasi stroke dengan fitur numerik lainnya, dapat dilihat bahwa yang memiliki korelasi dengan nilai besar adalah fitur **age**.
+
+
+**Membuat Korelasi antara fitur age, bmi, dan stroke yang dapat dilihat pada Gambar 13**
+
+![korelasi antara age x bmi x stroke](https://user-images.githubusercontent.com/109077279/198948448-41e2ee6f-e2c1-41d4-bd83-5f2d97351221.png)
+
+Gambar 13. **Korelasi antara fitur age, bmi, dan stroke**
+
+Pada Gambar 13, terlihat bahwa pasien dengan stroke berada pada rentang usia > 40 tahun dan rentang bmi di bawah 60.
 
 
 ## Data Preparation
@@ -157,24 +180,59 @@ Train test split aja proses membagi data menjadi data latih dan data uji. Data l
 Algoritma machine learning akan memiliki performa lebih baik dan bekerja lebih cepat jika dimodelkan dengan data seragam yang memiliki skala relatif sama. Salah satu teknik normalisasi yang digunakan pada proyek ini adalah Standarisasi dengan sklearn.preprocessing.StandardScaler.
 
 ## Modeling
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
 
 Algoritma Penelitian ini melakukan pemodelan dengan algoritma Random Forest
 - Random Forest Algoritma random forest adalah teknik dalam machine learning dengan metode ensemble. Teknik ini beroperasi dengan membangun banyak decision tree pada waktu pelatihan. Proyek ini menggunakan sklearn.ensemble RandomForestClassifier dengan memasukkan X_train dan y_train dalam membangun model. Parameter yang digunakan pada proyek ini adalah :
 
-  - max_depth = Kedalaman maksimum setiap tree.
+   - max_depth = Kedalaman maksimum setiap tree.
    - max_features = hyperparameter yang menentukan jumlah variable prediktor yang akan dipertimbangkan di setiap tree.
 
-- Hyperparameter Tuning (Grid Search) Hyperparameter tuning adalah cara untuk mendapatkan parameter terbaik dari algoritma dalam membangun model. Salah satu teknik dalam hyperparameter tuning yang digunakan dalam proyek ini adalah grid search. Berikut adalah hasil dari Grid Search pada proyek ini :
+**Tahapan:**
 
-![grid search](https://github.com/salmafaa/image-for-mlt/blob/main/gridsearch-final.png)
+- Import library yang dibutuhkan
+```sh
+from sklearn.model_selection import GridSearchCV
+from sklearn.ensemble import RandomForestClassifier
+```
+Disini terdapat dua library yang akan digunakan, yaitu RandomForestClassifier untuk membuat algoritma machine learning dengan kasus Klasifikasi dan GridSearchCV untuk melakukan Hyperparameter tuning. Hyperparameter tuning adalah cara untuk mendapatkan parameter terbaik dari algoritma dalam membangun model. Salah satu teknik dalam hyperparameter tuning yang digunakan dalam proyek ini adalah grid search. 
+
+- Hyperparameter tuning dengan grid search
+
+```sh
+params = {'max_depth': list(range(6,16)), "max_features" : [2,3,4,5,6]}
+
+grid = GridSearchCV(RandomForestClassifier(random_state = 42), params, cv=10, scoring='accuracy', return_train_score=False,verbose=1)
+
+grid.fit(X_train, y_train)
+
+print(grid.best_params_)
+```
+
+Berikut adalah hasil dari Grid Search pada proyek ini :
+
+![gridsearch-final](https://user-images.githubusercontent.com/109077279/198955168-49b15c24-7e32-4b05-a5aa-f62ce1bb4d17.png)
+
+Gambar 14. **Hasil Grid View**
+
+Pada Gambar 14, dapat dilihat bahwa parameter max_depth terbaik adalah 14 dan untuk parameter max_features terbaik adalah 2.
+
+
+- Selanjutnya buatlah model prediksi dengan parameter terbaik dari hasil grid view pada Gammbar 14
+```sh
+rf = RandomForestClassifier(max_depth = 14, max_features = 2)
+
+rf.fit(X_train, y_train)
+```
+Setelah model ini dijalankan hasilnya kan disimpan untuk tahap evaluasi.
 
 ## Evaluation
-Metrik evaluasi yang digunakan pada proyek ini adalah Confusion Matrix. Confusion matrix juga sering disebut error matrix. Pada dasarnya confusion matrix memberikan informasi perbandingan hasil klasifikasi yang dilakukan oleh sistem (model) dengan hasil klasifikasi sebenarnya. Confusion matrix berbentuk tabel matriks yang menggambarkan kinerja model klasifikasi pada serangkaian data uji yang nilai sebenarnya diketahui. Gambar dibawah ini merupakan confusion matrix dengan 4 kombinasi nilai prediksi dan nilai aktual yang berbeda.
+Metrik evaluasi yang digunakan pada proyek ini adalah Confusion Matrix. Confusion matrix juga sering disebut _error matrix_. Pada dasarnya confusion matrix memberikan informasi perbandingan hasil klasifikasi yang dilakukan oleh sistem (model) dengan hasil klasifikasi sebenarnya. Confusion matrix berbentuk tabel matriks yang menggambarkan kinerja model klasifikasi pada serangkaian data uji yang nilai sebenarnya diketahui. Pada Gambar 15 dibawah ini merupakan confusion matrix dengan 4 kombinasi nilai prediksi dan nilai aktual yang berbeda.
 
-![confunsion matrix](https://github.com/salmafaa/image-for-mlt/blob/main/matrix.jpeg)
+![matrix](https://user-images.githubusercontent.com/109077279/198958647-dc8651c3-7ef0-490a-8282-409f6569af8d.jpeg)
 
-Terdapat 4 istilah sebagai representasi hasil proses klasifikasi pada confusion matrix. Keempat istilah tersebut adalah True Positive (TP), True Negative (TN), False Positive (FP) dan False Negative (FN).
+Gambar 15. **Confusion Matrix**
+
+Pada Gambar 15, terlihat bahwa terdapat 4 istilah sebagai representasi hasil proses klasifikasi pada confusion matrix. Keempat istilah tersebut adalah True Positive (TP), True Negative (TN), False Positive (FP) dan False Negative (FN).
 
 - True Positive (TP)
 Merupakan data positif yang diprediksi benar. Contohnya, pasien menderita stroke (class 1) dan dari model yang dibuat memprediksi pasien tersebut menderita stroke (class 1).
@@ -185,37 +243,78 @@ Merupakan data negatif namun diprediksi sebagai data positif. Contohnya, pasien 
 - False Negative (FN) — Type II Error
 Merupakan data positif namun diprediksi sebagai data negatif. Contohnya, pasien menderita stroke (class 1) tetapi dari model yang dibuat memprediksi pasien tersebut tidak menderita stroke (class 0).
 
-Kita dapat menggunakan confusion matrix untuk menghitung berbagai performance metrics untuk mengukur kinerja model yang telah dibuat. Beberapa performance metrics ang sering digunakan: accuracy, precission, dan recall.
+Kita dapat menggunakan confusion matrix untuk menghitung berbagai _performance metrics_ untuk mengukur kinerja model yang telah dibuat. Beberapa _performance metrics_ ang sering digunakan: accuracy, precission, dan recall.
+
 - Accuracy menggambarkan seberapa akurat model dapat mengklasifikasikan dengan benar.
 
-![accuracy](https://github.com/salmafaa/image-for-mlt/blob/main/Persamaan-nilai-akurasi.png)
+
 
 - Precision menggambarkan tingkat keakuratan antara data yang diminta dengan hasil prediksi yang diberikan oleh model.
 
-![precision](https://github.com/salmafaa/image-for-mlt/blob/main/persamaan-nilai-precision.jpeg)
+
 
 - Recall menggambarkan keberhasilan model dalam menemukan kembali sebuah informasi.
  
-![recall](https://github.com/salmafaa/image-for-mlt/blob/main/persamaan-nilai-recall.jpeg)
+
 
 Berikut hasil evaluasi dari proyek ini :
+
 - Akurasi
 
-![akurasi](https://github.com/salmafaa/image-for-mlt/blob/main/akurasi.png)
+![akurasi](https://user-images.githubusercontent.com/109077279/198959570-d5a92553-15a4-4f73-a3b1-0fef9faa76c3.png)
+
+Gambar 16. **Hasil Akurasi**
+
+Pada Gambar 16, terlihat bahwa hasil akurasi dari proses train dan test sangat tinggi, yaitu 1.0
+
 
 - Confusion Matrix
 
-![confusion matrix](https://github.com/salmafaa/image-for-mlt/blob/main/matrix-mlt.png)
+![matrix-mlt](https://user-images.githubusercontent.com/109077279/198960110-c71468e0-d4ab-43f5-b099-6105884d117f.png)
+
+Gambar 17. **Hasil Confusion Matrix**
+
+Pada Gambar 17, ternilai bahwa hasil dari confusion matrix memiliki nilai yang bagus. Nilai antara True dan False seimbang.
+
 
 - Perfomance Matrix
 
-![performance](https://github.com/salmafaa/image-for-mlt/blob/main/prediksi2.png)
+![prediksi2](https://user-images.githubusercontent.com/109077279/198961494-9400098c-079b-458b-97b2-5f3d39371ba9.png)
 
-F1 score: rata-rata harmonik presisi dan daya ingat.
+Gambar 18. Hasil Performance Matrix
+
+Pada Gambar 18, terlihat bahwa setiap performance matrix memiliki keluaran nilai yang baik.
+
+F1 score: rata-rata antara precision dan recall.
+
 AUC: hubungan antara  true-positive rate dan false-positive rate.
 
 - Prediksi
 
-![prediksi](https://github.com/salmafaa/image-for-mlt/blob/main/prediksi.png)
+Untuk memastikan apakah model dapat memprediksi dengan baik maka dilakukan prediksi terhadap model yang telah dilatih. Dapat dilihat pada Tabel 1, terdapat dua kolom utama, yaitu y_test dan y_pred. Terdapat sepuluh percobaan prediksi dan dapat dilihat bahwa hasil prediksi yang ditampilkan akurat.
 
-Dari hasil evaluasi dapat dilihat bahwa model algoritma Random Forest dengan kasus klasifikasi memiliki akurasi yang tinggi dan hasil prediksi yang tepat. 
+Tabel 1. **Hasil Prediksi Model**
+|      | y_test | y_pred |
+|-----:|-------:|-------:|
+| 6633 |      0 |      0 |
+|  641 |      1 |      1 |
+| 7785 |      0 |      0 |
+|  988 |      1 |      1 |
+| 4796 |      1 |      1 |
+| 6299 |      0 |      0 |
+| 5364 |      0 |      0 |
+| 1677 |      1 |      1 |
+| 5735 |      0 |      0 |
+| 7001 |      0 |      0 |
+
+
+## Conclusion
+
+Dari hasil evaluasi dapat dilihat bahwa model algoritma Random Forest dengan kasus klasifikasi memiliki akurasi yang tinggi dan hasil prediksi yang akurat sehingga model ini dapat membantu dalam memprediksi stroke. Faktor-faktor yang mempengaruhi stroke di antaranya: jenis kelamin, usia, hipertensi, penyakit hati, kadar glukosa, berat badan, daerah tempat tinggal, status merokok, jenis pekerjaan, dan pernikahan. Di antara semua faktor tersebut, faktor yang paling menentukan resiko terkena stroke adalah faktor usia. 
+
+
+## REFERENCES
+
+[1] P2PTM Kemenkes RI. (2017, Oktober 25). Germas Cegah Stroke. Diakses dari http://p2ptm.kemkes.go.id/tag/germas-cegah-stroke
+
+[2] FEDESORIANO. 2021. "Stroke Prediction Dataset". Diakses dari https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset
